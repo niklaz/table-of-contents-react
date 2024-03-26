@@ -2,10 +2,12 @@ import React, {useState, useEffect} from 'react';
 import TocAPI from '../api/TocAPI';
 import ParseToC from "../utils/ParseToC";
 import { Chapter } from '../models/Chapter';
+import { ChapterProvider, useActiveChapter } from '../providers/ChapterProvider';
 import Sidebar from "./Sidebar";
+import Main from "./Main";
 
 export default function ToC() {
-    const [tocData, setTocData] = useState<Chapter[]>([]);
+    const { tocData, setTocData } = useActiveChapter();
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -27,7 +29,12 @@ export default function ToC() {
     return (
         <>
             {loading ? <p>Loading...</p> : (
-             <Sidebar tocData={tocData} />
+                    <div>
+                        <Sidebar/>
+                        <Main />
+                    </div>
+
+
             )}
         </>
     );

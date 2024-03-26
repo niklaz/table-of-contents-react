@@ -1,16 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import TocAPI from '../api/TocAPI';
-
+import ParseToC from "../utils/ParseToC";
+import { Chapter } from '../models/Chapter';
+import Sidebar from "./Sidebar";
 
 export default function ToC() {
-    const [tocData, setTocData] = useState([]);
+    const [tocData, setTocData] = useState<Chapter[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchTocData = async () => {
             const response = await new TocAPI().getTocData();
             if(response.data.content.document) {
-                setTocData(response.data.content.document);
+                const parsedData = ParseToC(response.data.content.document);
+                console.log(parsedData)
+                setTocData(parsedData);
             }
             setLoading(false);
         }
@@ -21,15 +25,10 @@ export default function ToC() {
     }, []);
 
     return (
-        <div>
-            <h1>Table of Contents</h1>
+        <>
             {loading ? <p>Loading...</p> : (
-                <ul>
-                    {tocData.map((item: any, index: any) => (
-                        <li key={index}>{item.name}</li>
-                    ))}
-                </ul>
+             <Sidebar tocData={tocData} />
             )}
-        </div>
+        </>
     );
 }

@@ -11,7 +11,7 @@ import { Chapter } from '../models/Chapter';
 export default function useOpenChapter (){
     const { setActiveChapter, setActiveSubChapter }  = useActiveChapter();
 
-    const openChapter = (item : Chapter) => {
+   return (item : Chapter) => {
         if (item.level && item.level !== 3) {
             setActiveChapter(item);
             setActiveSubChapter(null);
@@ -23,7 +23,5 @@ export default function useOpenChapter (){
             element.scrollIntoView({ behavior: "smooth" });
         }
     };
-
-    return openChapter;
 };
 

@@ -23,7 +23,7 @@ export default function ChapterListItem({ item }: ChapterListItemProps) {
     const { activeChapter, activeSubChapter } = useActiveChapter();
     const openChapter = useOpenChapter(); // Use the custom Hook
 
-    const isActiveChapterWithChildren = activeChapter === item && !!activeChapter?.children?.length;
+    //check if current item is parent of active chapter
     const isParentOfActiveChapter = activeChapter?.parent_id === item.id;
 
     //if current item is active chapter, then add active class,

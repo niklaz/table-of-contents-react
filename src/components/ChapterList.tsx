@@ -1,6 +1,5 @@
 import React from "react";
 import {useActiveChapter} from "../providers/ChapterProvider";
-import {Chapter} from "../models/Chapter";
 import ChapterListItem from "./ChapterListItem";
 
 

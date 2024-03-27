@@ -15,7 +15,6 @@ export default function ToC() {
             const response = await new TocAPI().getTocData();
             if(response.data.content.document) {
                 const parsedData = ParseToC(response.data.content.document);
-                console.log(parsedData)
                 setTocData(parsedData);
             }
             setLoading(false);
@@ -29,7 +28,7 @@ export default function ToC() {
     return (
         <>
             {loading ? <p>Loading...</p> : (
-                    <div>
+                    <div className="container">
                         <Sidebar/>
                         <Main />
                     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './assets/style/App.scss';
 import ToC from './layouts/ToC';
 import { ChapterProvider } from './providers/ChapterProvider';
 function App() {

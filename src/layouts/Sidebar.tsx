@@ -1,4 +1,4 @@
-import ToCTree from "../components/ToCTree";
+import ChapterList from "../components/ChapterList";
 
 /*
 *  Sidebar panel that displays ToC tree
@@ -11,7 +11,7 @@ export default function Sidebar() {
 
   return (
       <div className="sidebar">
-            <ToCTree/>
+            <ChapterList/>
       </div>
   );
 }

@@ -1,11 +1,21 @@
 body{
+    button{
+        // Reset button styles
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        font-size: inherit;
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+    }
     background-color: #f0f0f0;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     .container{
-
         max-width: 1280px;
         margin: 0 auto;
         padding: 20px;
@@ -21,9 +31,7 @@ body{
                    font-size: 24px;
                     margin-bottom: 5px;
                 }
-
             }
-
         }
         .sidebar, .main{
             border: 1px solid #a2a2a2;
@@ -41,53 +49,70 @@ body{
                 }
                 list-style: none;
                 li.list-item{
-                    padding-top: 5px;
-                    padding-bottom: 5px;
-                    &.level-3{
-                        padding-top: 10px;
-                        padding-bottom: 10px;
-                        padding-left: 10px;
-                        &:hover, &.active{
+                    button{
+                        font-size: 1rem;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        width: 100%;
+                        text-align: left;
+                        &:hover{
                             background: #3F3D6B;
-                            &, button{
+                            color: #fff;
+                        }
+                    }
+
+                    &.level-3{
+                        padding-left: 10px;
+                        button{
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+
+                        }
+
+                    }
+                    &.active{
+                        & > button{
+                                background: #3F3D6B;
                                 color: #fff;
-                            }
                         }
                     }
                     &:not(.level-3){
-                        &:before{
-                            content: ' ';
-                            display: inline-block;
-                            background : url('../images/arrow-icon.svg') no-repeat;
-                            width: 20px;
-                            height: 20px;
-                            position: relative;
-                            top: 5px;
-                            transition: all 0.3s ease;
+                       & > button{
+                            &:before{
+                                content: ' ';
+                                display: inline-block;
+                                background : url('../images/arrow-icon.svg') no-repeat;
+                                width: 20px;
+                                height: 20px;
+                                position: relative;
+                                top: 5px;
+                                transition: all 0.3s ease;
+                            }
                         }
+
                     }
                     &.active{
-                       &:before {
-                           //rotate the arrow icon to point down
-                            transform: rotate(90deg);
-
-                       }
+                       & > button{
+                            &:before{
+                                transform: rotate(90deg);
+                            }
+                        }
                     }
                 }
             }
 
         }
     }
+    .chapter{
+        .chapter-content{
+            transition: background-color 0.3s ease;
+        }
+        &.active{
+            & > .chapter-content{
+                background: #E1E1E1;
+            }
 
-}
-button{
-    // Reset button styles
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
-    color: #333;
+        }
+    }
+
 }

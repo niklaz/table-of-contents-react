@@ -18,7 +18,7 @@ export default function ChapterList() {
                     <ChapterListItem item={item} key={index} />
                 ))}
             </ul>
-        ) : <p>No data found</p> }
+        ) : <p> </p> }
         </>
     );
 }

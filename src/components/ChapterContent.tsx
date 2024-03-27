@@ -8,15 +8,20 @@ import ChapterContentItem from "./ChapterContentItem";
 * @returns - JSX.Element
 * */
 export default function ChapterContent() {
-    const { activeChapter } = useActiveChapter();
+    const { tocData, activeChapter } = useActiveChapter();
 
     return (
-        <>
+
+    <>  { tocData && tocData.length > 0 ?  (
+        <div>
             {activeChapter ? (
                 <ChapterContentItem item={activeChapter} includeChildren={true} />
             ) : (
                 <p>Please select a chapter</p>
             )}
-        </>
+        </div>
+    ) : <p>No data found, please check your connection or check if the API is running and try again.
+    </p> }
+    </>
     );
 }

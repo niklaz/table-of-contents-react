@@ -1,5 +1,13 @@
 import { Chapter } from '../models/Chapter';
 
+
+/*
+*  Parse the flat array of chapters into a tree structure
+*
+* @param chapters - Chapter[]
+* @returns - Chapter[]
+*
+* */
 export default function ParseToC(chapters: Chapter[]): Chapter[]{
     const chapterMap: { [key: string]: Chapter } = {}; // A map to hold chapters by their ids
 

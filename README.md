@@ -1,6 +1,63 @@
-# Getting Started with Create React App
+# Table of Contents - React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Table of Contents - React App](#table-of-contents---react-app)
+  - [About](#about)
+  - [JSON Data Structure](#json-data-structure)
+  - [Available Scripts](#available-scripts)
+    - [`npm start`](#npm-start)
+    - [`npm test`](#npm-test)
+    - [`npm run build`](#npm-run-build)
+    - [`npm run eject`](#npm-run-eject)
+  - [Learn More](#learn-more)
+
+## About
+
+This project is a simple React app that displays a table of contents. The table of contents is generated from a REST API response in form of JSON output that contains the structure of the table of contents. 
+
+For testing purposes, there is a mock json-server in the backend folder that serves the JSON file. 
+Install the dependencies and run the mock server to test the app using `npm start`. 
+Server runs on [http://localhost:3004](http://localhost:3004).
+
+In the production environment, the app fetches the JSON data from the actual REST API endpoint. 
+Base URL for the API is defined src/config/APIConfig.ts file.
+For production purposes, this can be changed to the actual API endpoint, and also extracted to an environment variable ```API_URL```.
+
+## JSON Data Structure
+
+The JSON output contains an array of objects under ```document``` node. 
+
+```json
+{
+  "data": {
+    "content": {
+      "document": [
+          {
+          "id": "951a4781-92fb-48da-907c-c320f9886879",
+          "name": "Chapter 1",
+          "level": 1,
+          "parent_id": "", 
+          "content": "Chapter 1 subscript"
+          }
+        ]
+      }
+  }
+}
+
+```
+Each object represents a section of the table of contents. Each object has the following properties:
+
+
+```id``` - The id of the section.
+
+```name``` - The title of the section.
+
+```level``` - The level of the section. The level of the section is 1 if it is a chapter, 2 if it is a section, 3 if it is a subsection, and so on.
+
+```parent_id```  - The id of the parent section, the parent_id is empty if chapter is level 1.
+
+```content``` - The content of the section. 
+
+
 
 ## Available Scripts
 
@@ -41,6 +98,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).

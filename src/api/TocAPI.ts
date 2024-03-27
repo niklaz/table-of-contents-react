@@ -1,6 +1,12 @@
 import {ApiService} from '../services/ApiService';
 import {APIConfig} from "../config/APIConfig";
 
+
+/*
+*  TocAPI class
+* This class is responsible for handling the API calls related to the Table of Contents
+*
+* */
 export default class TocAPI {
 
     private apiService: ApiService;

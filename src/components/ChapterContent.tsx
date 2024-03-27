@@ -4,6 +4,8 @@ import ChapterContentItem from "./ChapterContentItem";
 
 /*
 *  ChapterContent component that displays the content of the selected chapter and its children
+*
+* @returns - JSX.Element
 * */
 export default function ChapterContent() {
     const { activeChapter } = useActiveChapter();

@@ -18,6 +18,9 @@ interface ChapterContextType {
 /*
 *  ChapterContext is a context object that will be provided by the ChapterProvider component.
 * It is used to manage the active chapter and subchapter in the application.
+*
+* @type {React.Context<ChapterContextType | undefined>}
+* @default undefined
 * */
 const ChapterContext = createContext<ChapterContextType | undefined>(undefined);
 
@@ -35,6 +38,7 @@ export const useActiveChapter = () => {
 
 /*
 *  ChapterProvider is a component that provides the ChapterContext to its children.
+*
 * */
 export const ChapterProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [activeChapter, setActiveChapter] = useState<Chapter | null>(null);

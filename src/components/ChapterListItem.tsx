@@ -17,6 +17,7 @@ interface ChapterListItemProps {
 *  ChapterListItem component that displays the list of chapters and their children
 *
 * @param item - Chapter
+* @returns - JSX.Element
 *
 * */
 export default function ChapterListItem({ item }: ChapterListItemProps) {

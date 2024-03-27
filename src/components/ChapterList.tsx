@@ -5,11 +5,11 @@ import ChapterListItem from "./ChapterListItem";
 
 /*
 * Displays the Table of Contents tree structure
+*
+*  @returns - JSX.Element
 * */
 export default function ChapterList() {
     const { tocData } = useActiveChapter();
-
-
 
     return (
         <>  { tocData && tocData.length > 0 ?  (

@@ -2,6 +2,8 @@ import ChapterContent from "../components/ChapterContent";
 
 /*
 * Display the main content of the active Table of Content's chapter and its children via the ChapterContent component.
+*
+* @returns - JSX.Element
 * */
 export default function Main() {
   return (

@@ -4,11 +4,30 @@ import {Chapter} from "../models/Chapter";
 import useOpenChapter from "../hooks/useOpenChapter";
 
 
+
+/*
+*  ChapterContentItem component that displays the content of the chapter
+* and its children
+*
+*  @param item - Chapter
+*  @param includeChildren - boolean
+* */
 interface ChapterContentItemProps {
     item: Chapter;
     includeChildren?: boolean;
 }
 
+
+/*
+*  ChapterContentItem component that displays the content of the chapter
+*  and its children
+*
+*  @param item - Chapter
+*  @param includeChildren - boolean
+*
+*  @returns - JSX.Element
+*
+* */
 export default function ChapterContentItem({item , includeChildren = false} : ChapterContentItemProps) {
 
     const { activeChapter, activeSubChapter } = useActiveChapter();
